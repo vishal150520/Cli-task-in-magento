@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Bluethink_Grid::manager" title="Grid Manager" module="Bluethink_Grid" sortOrder="10" resource="Bluethink_Grid::manager" />
+        <add id="Bluethink_Grid::add_row" title="Grid Manager" module="Bluethink_Grid" sortOrder="20" parent="Bluethink_Grid::manager" action="grid/grid" resource="Bluethink_Grid::add_row"/>
+    </menu>
+</config>
