@@ -68,11 +68,59 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         }
 
         $fieldset->addField(
-            'title',
+            'firstname',
             'text',
             [
-                'name' => 'title',
-                'label' => __('Title'),
+                'name' => 'firstname',
+                'label' => __('Firstname'),
+                'id' => 'title',
+                'title' => __('Title'),
+                'class' => 'required-entry',
+                'required' => true,
+            ]
+        );
+        $fieldset->addField(
+            'lastname',
+            'text',
+            [
+                'name' => 'lastname',
+                'label' => __('Lastname'),
+                'id' => 'title',
+                'title' => __('Title'),
+                'class' => 'required-entry',
+                'required' => true,
+            ]
+        );
+        $fieldset->addField(
+            'email',
+            'text',
+            [
+                'name' => 'email',
+                'label' => __('Email'),
+                'id' => 'title',
+                'title' => __('Title'),
+                'class' => 'required-entry',
+                'required' => true,
+            ]
+        );
+        $fieldset->addField(
+            'username',
+            'text',
+            [
+                'name' => 'username',
+                'label' => __('Username'),
+                'id' => 'title',
+                'title' => __('Title'),
+                'class' => 'required-entry',
+                'required' => true,
+            ]
+        );
+        $fieldset->addField(
+            'password',
+            'text',
+            [
+                'name' => 'password',
+                'label' => __('Password'),
                 'id' => 'title',
                 'title' => __('Title'),
                 'class' => 'required-entry',
@@ -82,44 +130,10 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
 
         $wysiwygConfig = $this->_wysiwygConfig->getConfig(['tab_id' => $this->getTabId()]);
 
-        $fieldset->addField(
-            'content',
-            'editor',
-            [
-                'name' => 'content',
-                'label' => __('Content'),
-                'style' => 'height:36em;',
-                'required' => true,
-                'config' => $wysiwygConfig
-            ]
-        );
+     
 
-        $fieldset->addField(
-            'publish_date',
-            'date',
-            [
-                'name' => 'publish_date',
-                'label' => __('Publish Date'),
-                'date_format' => $dateFormat,
-                'time_format' => 'H:mm:ss',
-                'class' => 'validate-date validate-date-range date-range-custom_theme-from',
-                'class' => 'required-entry',
-                'style' => 'width:200px',
-            ]
-        );
-        $fieldset->addField(
-            'is_active',
-            'select',
-            [
-                'name' => 'is_active',
-                'label' => __('Status'),
-                'id' => 'is_active',
-                'title' => __('Status'),
-                'values' => $this->_options->getOptionArray(),
-                'class' => 'status',
-                'required' => true,
-            ]
-        );
+     
+       
         $form->setValues($model->getData());
         $form->setUseContainer(true);
         $this->setForm($form);

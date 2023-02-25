@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -7,6 +6,8 @@
             <item name="deps" xsi:type="string">grid_record_grid_list.grid_record_grid_list_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">grid_records_columns</item>
+
+
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
@@ -15,6 +16,7 @@
                 <item name="url" xsi:type="string">*/*/addrow</item>
             </item>
         </item>
+        
     </argument>
     <dataSource name="grid_record_grid_list_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -93,6 +95,19 @@
                     </item>
                 </argument>
             </action>
+            <action name="Edit">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">edit</item>
+                        <item name="label" xsi:type="string" translate="true">Edit</item>
+                        <item name="url" xsi:type="url" path="grid/grid/addrow"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Edit</item>
+                            <item name="message" xsi:type="string" translate="true">Do you want to update selected row record?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
         </massaction>
         <paging name="listing_paging">
             <argument name="data" xsi:type="array">
@@ -106,6 +121,7 @@
             </argument>
         </paging>
     </container>
+
     <columns name="grid_records_columns">
         <selectionsColumn name="ids">
            <argument name="data" xsi:type="array">
@@ -116,54 +132,63 @@
                </item>
            </argument>
        </selectionsColumn>
-       <column name="title">
+           <column name="entity_id">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">text</item>
-                   <item name="label" xsi:type="string" translate="true">Title</item>
+                   <item name="label" xsi:type="string" translate="true">User_id</item>
                </item>
            </argument>
        </column>
-       <column name="content" >
+       <column name="firstname">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">firstname</item>
+               </item>
+           </argument>
+       </column>
+        <column name="lastname">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">lastname</item>
+               </item>
+           </argument>
+       </column>
+        <column name="password">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">Password</item>
+               </item>
+           </argument>
+       </column>
+       <column name="email" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">false</item>
-                   <item name="label" xsi:type="string" translate="true">Content</item>
+                   <item name="label" xsi:type="string" translate="true">Email</item>
                </item>
            </argument>
-       </column>
-       <column name="is_active" >
-           <argument name="data" xsi:type="array">
-               <item name="options" xsi:type="object">Bluethink\Grid\Model\Status</item>
-               <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">select</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                   <item name="dataType" xsi:type="string">select</item>
-                   <item name="label" xsi:type="string" translate="true">Is Active</item>
-               </item>
-           </argument>
-       </column>
-       <column name="publish_date" class="Magento\Ui\Component\Listing\Columns\Date" >
+       </column>          
+        <column name="username" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">dateRange</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                   <item name="dataType" xsi:type="string">date</item>
-                   <item name="label" xsi:type="string" translate="true">Publish Date</item>
-               </item>
+                   <item name="filter" xsi:type="string">false</item>
+                   <item name="label" xsi:type="string" translate="true">UserName</item>
+               </item> 
            </argument>
        </column>
-       <column name="update_time" class="Magento\Ui\Component\Listing\Columns\Date" >
+         <column name="password" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">dateRange</item>
-                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                   <item name="dataType" xsi:type="string">date</item>
-                   <item name="label" xsi:type="string" translate="true">Update Time</item>
+                   <item name="filter" xsi:type="string">false</item>
+                   <item name="label" xsi:type="string" translate="true">Password</item>
                </item>
            </argument>
        </column>
-       <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" >
+       <column name="created" class="Magento\Ui\Component\Listing\Columns\Date" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">dateRange</item>
@@ -173,6 +198,122 @@
                </item>
            </argument>
        </column>
+       <column name="modified" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">dateRange</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">date</item>
+                   <item name="label" xsi:type="string" translate="true">Modified At</item>
+               </item>
+           </argument>
+       </column>
+         <column name="logdate" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">dateRange</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">date</item>
+                   <item name="label" xsi:type="string" translate="true">Logdate</item>
+               </item>
+           </argument>
+       </column>
+         <column name="lognum" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">dateRange</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">Log_num</item>
+               </item>
+           </argument>
+       </column>
+         <column name="reload_acl_flag" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">dateRange</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">reload_acl_flag</item>
+               </item>
+           </argument>
+       </column>
+        <column name="reload_acl_flag" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">Isactive</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">Isactive</item>
+               </item>
+           </argument>
+       </column>
+         <column name="extra" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">Isactive</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">extra</item>
+               </item>
+           </argument>
+       </column>
+          <column name="rp_token" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">Isactive</item>
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">rp_token</item>
+               </item>
+           </argument>
+       </column>
+        <column name="rp_token_created_at" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">rp_token_created_at</item>
+               </item>
+           </argument>
+       </column>
+        <column name="interface_locale" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">interface_locale</item>
+               </item>
+           </argument>
+       </column>
+         <column name="failures_num" class="Magento\Ui\Component\Listing\Columns\Date" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">failures_num</item>
+               </item>
+           </argument>
+       </column>
+          <column name="first_failure" class="Magento\Ui\Component\Listing\Columns\Date">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">first_failure</item>
+               </item>
+           </argument>
+       </column>
+          <column name="lock_expires" class="Magento\Ui\Component\Listing\Columns\Date">
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                   <item name="dataType" xsi:type="string">text</item>
+                   <item name="label" xsi:type="string" translate="true">lock_expires</item>
+               </item>
+           </argument>
+       </column>
+       
        <!-- Add Action with each row of grid and for this we will create a class Action -->
        <actionsColumn name="actions" class="Bluethink\Grid\Ui\Component\Listing\Grid\Column\Action">
            <argument name="data" xsi:type="array">
@@ -184,4 +325,5 @@
            </argument>
        </actionsColumn>
     </columns>
+
 </listing>
