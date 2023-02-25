@@ -132,31 +132,39 @@
                </item>
            </argument>
        </selectionsColumn>
-           <column name="entity_id">
+           <!-- <column name="entity_id">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">text</item>
                    <item name="label" xsi:type="string" translate="true">User_id</item>
                </item>
            </argument>
-       </column>
-       <column name="firstname">
+       </column> -->
+          <column name="productname" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="filter" xsi:type="string">false</item>
+                   <item name="label" xsi:type="string" translate="true">Product Name</item>
+               </item>
+           </argument>
+       </column> 
+       <column name="productid">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">text</item>
-                   <item name="label" xsi:type="string" translate="true">firstname</item>
+                   <item name="label" xsi:type="string" translate="true">Product Id</item>
                </item>
            </argument>
        </column>
-        <column name="lastname">
+        <column name="copyproduct">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">text</item>
-                   <item name="label" xsi:type="string" translate="true">lastname</item>
+                   <item name="label" xsi:type="string" translate="true">Quantity of Copy Product</item>
                </item>
            </argument>
        </column>
-        <column name="password">
+        <!-- <column name="password">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="filter" xsi:type="string">text</item>
@@ -164,14 +172,7 @@
                </item>
            </argument>
        </column>
-       <column name="email" >
-           <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">false</item>
-                   <item name="label" xsi:type="string" translate="true">Email</item>
-               </item>
-           </argument>
-       </column>          
+             
         <column name="username" >
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
@@ -312,7 +313,7 @@
                    <item name="label" xsi:type="string" translate="true">lock_expires</item>
                </item>
            </argument>
-       </column>
+       </column> -->
        
        <!-- Add Action with each row of grid and for this we will create a class Action -->
        <actionsColumn name="actions" class="Bluethink\Grid\Ui\Component\Listing\Grid\Column\Action">

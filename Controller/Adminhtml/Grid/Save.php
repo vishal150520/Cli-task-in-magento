@@ -33,7 +33,42 @@ class Save extends \Magento\Backend\App\Action
             $this->_redirect('grid/grid/addrow');
             return;
         }
+       
         try {
+            if($data)
+            {
+                if($data['copyproduct']==null || $data['copyproduct']==0|| $data['copyproduct']==1 )
+                {
+                    $data['copyproduct']=1;
+                    $randomid = mt_rand(100000,999999);  
+                    $data['productid']=$randomid;
+                    // print_r($data);die();
+
+                }
+                else
+                {
+                    $data['copyproduct']=$data['copyproduct'];
+                    $n=$data['copyproduct'];
+                    for($i=0;$i<$n;$i++)
+                    {
+                        // $randomid = mt_rand(100000,999999); 
+                        // echo $randomid;die();
+                        // $array[$i] = mt_rand(100000,999999);
+                        // $randomid= implode(",",$array);
+                        // echo $randomid;die();
+                        // $data['productid']=$randomid;
+                        $random_number_array = range(100000,999999);
+                        shuffle($random_number_array );
+                        $random_number_array = array_slice($random_number_array ,1,$n);
+                        $randomid= implode(",",$random_number_array);
+                        $data['productid']=$randomid;
+                        // echo $randomid;die();
+                        // print_r($random_number_array);die();
+                    }
+                     
+                    
+                }
+            }  
             $rowData = $this->gridFactory->create();
             $rowData->setData($data);
             if (isset($data['id'])) {

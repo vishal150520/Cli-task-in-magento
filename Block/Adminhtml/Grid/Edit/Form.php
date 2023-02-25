@@ -67,66 +67,66 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             );
         }
 
+        // $fieldset->addField(
+        //     'firstname',
+        //     'text',
+        //     [
+        //         'name' => 'firstname',
+        //         'label' => __('ProductId'),
+        //         'id' => 'title',
+        //         'title' => __('Title'),
+        //         'class' => 'required-entry',
+        //         'required' => true,
+        //     ]
+        // );
         $fieldset->addField(
-            'firstname',
+            'product copy',
             'text',
             [
-                'name' => 'firstname',
-                'label' => __('Firstname'),
+                'name' => 'copyproduct',
+                'label' => __('Product Copy Quantity'),
+                'id' => 'title',
+                'title' => __('Title'),
+                // 'class' => 'required-entry',
+                // 'required' => true,
+            ]
+        );
+        $fieldset->addField(
+            'product name',
+            'text',
+            [
+                'name' => 'productname',
+                'label' => __('Product Name'),
                 'id' => 'title',
                 'title' => __('Title'),
                 'class' => 'required-entry',
                 'required' => true,
             ]
         );
-        $fieldset->addField(
-            'lastname',
-            'text',
-            [
-                'name' => 'lastname',
-                'label' => __('Lastname'),
-                'id' => 'title',
-                'title' => __('Title'),
-                'class' => 'required-entry',
-                'required' => true,
-            ]
-        );
-        $fieldset->addField(
-            'email',
-            'text',
-            [
-                'name' => 'email',
-                'label' => __('Email'),
-                'id' => 'title',
-                'title' => __('Title'),
-                'class' => 'required-entry',
-                'required' => true,
-            ]
-        );
-        $fieldset->addField(
-            'username',
-            'text',
-            [
-                'name' => 'username',
-                'label' => __('Username'),
-                'id' => 'title',
-                'title' => __('Title'),
-                'class' => 'required-entry',
-                'required' => true,
-            ]
-        );
-        $fieldset->addField(
-            'password',
-            'text',
-            [
-                'name' => 'password',
-                'label' => __('Password'),
-                'id' => 'title',
-                'title' => __('Title'),
-                'class' => 'required-entry',
-                'required' => true,
-            ]
-        );
+        // $fieldset->addField(
+        //     'username',
+        //     'text',
+        //     [
+        //         'name' => 'username',
+        //         'label' => __('Username'),
+        //         'id' => 'title',
+        //         'title' => __('Title'),
+        //         'class' => 'required-entry',
+        //         'required' => true,
+        //     ]
+        // );
+        // $fieldset->addField(
+        //     'password',
+        //     'text',
+        //     [
+        //         'name' => 'password',
+        //         'label' => __('Password'),
+        //         'id' => 'title',
+        //         'title' => __('Title'),
+        //         'class' => 'required-entry',
+        //         'required' => true,
+        //     ]
+        // );
 
         $wysiwygConfig = $this->_wysiwygConfig->getConfig(['tab_id' => $this->getTabId()]);
 
