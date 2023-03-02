@@ -80,29 +80,29 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
         //     ]
         // );
         $fieldset->addField(
-            'product copy',
+            'title',
             'text',
             [
-                'name' => 'copyproduct',
+                'name' => 'title',
                 'label' => __('Product Copy Quantity'),
-                'id' => 'title',
-                'title' => __('Title'),
-                // 'class' => 'required-entry',
-                // 'required' => true,
-            ]
-        );
-        $fieldset->addField(
-            'product name',
-            'text',
-            [
-                'name' => 'productname',
-                'label' => __('Product Name'),
                 'id' => 'title',
                 'title' => __('Title'),
                 'class' => 'required-entry',
                 'required' => true,
             ]
         );
+        // $fieldset->addField(
+        //     'product name',
+        //     'text',
+        //     [
+        //         'name' => 'productname',
+        //         'label' => __('Product Name'),
+        //         'id' => 'title',
+        //         'title' => __('Title'),
+        //         'class' => 'required-entry',
+        //         'required' => true,
+        //     ]
+        // );
         // $fieldset->addField(
         //     'username',
         //     'text',

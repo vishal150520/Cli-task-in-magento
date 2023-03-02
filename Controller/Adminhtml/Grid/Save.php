@@ -37,18 +37,18 @@ class Save extends \Magento\Backend\App\Action
         try {
             if($data)
             {
-                if($data['copyproduct']==null || $data['copyproduct']==0|| $data['copyproduct']==1 )
+                if($data['title']==null || $data['title']==0|| $data['title']==1 )
                 {
-                    $data['copyproduct']=1;
+                    $data['title']=1;
                     $randomid = mt_rand(100000,999999);  
-                    $data['productid']=$randomid;
+                    $data['content']=$randomid;
                     // print_r($data);die();
 
                 }
                 else
                 {
-                    $data['copyproduct']=$data['copyproduct'];
-                    $n=$data['copyproduct'];
+                    $data['title']=$data['title'];
+                    $n=$data['title'];
                     for($i=0;$i<$n;$i++)
                     {
                         // $randomid = mt_rand(100000,999999); 
@@ -61,7 +61,7 @@ class Save extends \Magento\Backend\App\Action
                         shuffle($random_number_array );
                         $random_number_array = array_slice($random_number_array ,1,$n);
                         $randomid= implode(",",$random_number_array);
-                        $data['productid']=$randomid;
+                        $data['content']=$randomid;
                         // echo $randomid;die();
                         // print_r($random_number_array);die();
                     }

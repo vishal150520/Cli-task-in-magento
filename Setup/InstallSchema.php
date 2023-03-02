@@ -39,17 +39,17 @@ class InstallSchema implements InstallSchemaInterface
             ['identity' => true, 'nullable' => false, 'primary' => true],
             'Grid Record Id'
         )->addColumn(
-            'title',
+            'copyproduct',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
             255,
             ['nullable' => false],
-            'Title'
+            'Copyproduct'
         )->addColumn(
-            'content',
+            'productid',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
             '2M',
             ['nullable' => false],
-            'Post'
+            'Productid'
         )->addColumn(
             'publish_date',
             \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,

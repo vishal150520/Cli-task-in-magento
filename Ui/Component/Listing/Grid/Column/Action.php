@@ -62,31 +62,40 @@ class Action extends Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
                 $name = $this->getData('name');
-                if (isset($item['entity_id'])) {
-                    $item[$name]['edit'] = [
-                        'href' => $this->_urlBuilder->getUrl(
-                            $this->_editUrl,
-                            ['id' => $item['entity_id']]
-                        ),
-                        'label' => __('Edit'),
-                    ];
-                }
-                if (isset($item['entity_id'])) {
-                    $item[$name]['delete'] = [
-                        'href' => $this->_urlBuilder->getUrl(
-                            static::ROW_DELETE_URL,
-                            ['id' => $item['entity_id']]
-                        ),
-                        'label' => __('Delete'),
-                    ];
-                }
+                // if (isset($item['entity_id'])) {
+                //     $item[$name]['edit'] = [
+                //         'href' => $this->_urlBuilder->getUrl(
+                //             $this->_editUrl,
+                //             ['id' => $item['entity_id']]
+                //         ),
+                //         'label' => __('Edit'),
+                //     ];
+                // }
+                // if (isset($item['entity_id'])) {
+                //     $item[$name]['delete'] = [
+                //         'href' => $this->_urlBuilder->getUrl(
+                //             static::ROW_DELETE_URL,
+                //             ['id' => $item['entity_id']]
+                //         ),
+                //         'label' => __('Delete'),
+                //     ];
+                // }
+                // if (isset($item['entity_id'])) {
+                //     $item[$name]['view'] = [
+                //         'href' => $this->_urlBuilder->getUrl(
+                //             static::ROW_VIEW_URL,
+                //             ['id' => $item['entity_id']]
+                //         ),
+                //         'label' => __('Add'),
+                //     ];
+                // }
                 if (isset($item['entity_id'])) {
                     $item[$name]['view'] = [
                         'href' => $this->_urlBuilder->getUrl(
                             static::ROW_VIEW_URL,
                             ['id' => $item['entity_id']]
                         ),
-                        'label' => __('Add'),
+                        'label' => __('Make Copy'),
                     ];
                 }
             }

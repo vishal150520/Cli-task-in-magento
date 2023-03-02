@@ -156,4 +156,5 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
     {
         return $this->setData(self::CREATED_AT, $createdAt);
     }
+
 }
